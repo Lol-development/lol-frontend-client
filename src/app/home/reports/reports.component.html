@@ -1,0 +1,115 @@
+<div class="card">
+    <div class="card-body">
+
+        <h4 class="header-title">REPORTES DEL CLIENTE #4</h4>
+        <p class="text-muted font-14">
+            Seleccione una operación para ver sus reportes gráficos
+        </p>
+
+        <div class="app-search ">
+            <form>
+                <div class="mb-4 position-relative d-flex">
+                    <select class="form-select mx-2  w-50" id="example-select">
+                            <option>Operación ZYX</option>
+                            <option>Operación III</option>
+                            <option>Operación VI</option>
+                    </select>
+                    <input type="month" class="form-control w-50 mx-2" name="" id="">
+                    <button class="btn btn-primary" type="submit">Seleccionar</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="graphic-reports mb-3">
+            <div class="row mb-3">
+                <div class="col-12">
+                    <div class="card widget-inline">
+                        <div class="card-body p-0">
+                            <div class="row g-0 my-2">
+                                <div class="col-sm-6 col-xl-3">
+                                    <div class="card shadow-none m-0">
+                                        <div class="card-body text-center">
+                                            <i class="dripicons-briefcase text-muted" style="font-size: 24px;"></i>
+                                            <h5><span>16</span> Rollos/Hora</h5>
+                                            <h3 class="text-muted font-15 mb-0">Rata Esperada</h3>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-xl-3">
+                                    <div class="card shadow-none m-0 border-start">
+                                        <div class="card-body text-center">
+                                            <i class="dripicons-checklist text-muted" style="font-size: 24px;"></i>
+                                            <h5><span>8</span> Rollos/Hora</h5>
+                                            <h3 class="text-muted font-15 mb-0">Rata real</h3>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-xl-3">
+                                    <div class="card shadow-none m-0 border-start">
+                                        <div class="card-body text-center">
+                                            <i class="dripicons-user-group text-muted" style="font-size: 24px;"></i>
+                                            <h5><span>31</span> Horas</h5>
+                                            <h3 class="text-muted font-15 mb-0">Tiempo Esperado</h3>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-xl-3">
+                                    <div class="card shadow-none m-0 border-start">
+                                        <div class="card-body text-center">
+                                            <i class="dripicons-graph-line text-muted" style="font-size: 24px;"></i>
+                                            <h5><span>132.05</span> Horas<i class="mdi mdi-arrow-up text-success"></i></h5>
+                                            <h3 class="text-muted font-15 mb-0">Tiempo Real</h3>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- end row -->
+                        </div>
+                    </div>
+                    <!-- end card-box-->
+                </div>
+                <!-- end col-->
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div>
+                        <div style="display: block">
+                            <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [chartType]="barChartType" width="300" height="200">
+                          
+                        </canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="flex">
+                        <div class="flex-item">
+                            <div style="display: block;">
+                                <canvas baseChart width="300" height="200" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType">
+                            </canvas>
+                            </div>
+                        </div>
+                        <div class="flex-item">
+                            <table class="table table-responsive table-condensed">
+                                <tr>
+                                    <th *ngFor="let label of lineChartLabels">{{label}}</th>
+                                </tr>
+                                <tr *ngFor="let d of lineChartData; let i=index" [class]="'line-'+i">
+                                    <td *ngFor="let label of lineChartLabels; let j=index"></td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- end card body-->
+</div>

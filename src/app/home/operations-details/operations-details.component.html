@@ -1,0 +1,509 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="header-title">Detalles de la operacion</h4>
+
+        <!-- end nav-->
+        <div class="tab-content">
+            <div class="tab-pane show active" id="bordered-justified-tabs-preview">
+                <ul class="nav nav-tabs nav-justified nav-bordered mb-3">
+                    <li class="nav-item ">
+                        <a href="#turns" data-bs-toggle="tab" aria-expanded="false" class="nav-link active">
+                            <i class="mdi mdi-home-variant d-md-none d-block"></i>
+                            <span class="d-none d-md-block">Turnos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#daily-status" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
+                            <i class="mdi mdi-settings-outline d-md-none d-block"></i>
+                            <span class="d-none d-md-block">Estado de hechos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#chargue" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
+                            <i class="mdi mdi-settings-outline d-md-none d-block"></i>
+                            <span class="d-none d-md-block">Cargue</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#descharge" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
+                            <i class="mdi mdi-settings-outline d-md-none d-block"></i>
+                            <span class="d-none d-md-block">Descargue</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#office" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
+                            <i class="mdi mdi-settings-outline d-md-none d-block"></i>
+                            <span class="d-none d-md-block">Despacho</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#evidencias" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
+                            <i class="mdi mdi-settings-outline d-md-none d-block"></i>
+                            <span class="d-none d-md-block">Evidencias</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="tab-content">
+
+                            <div class="tab-pane show active" id="turns">
+                                <div class="tab-content">
+                                    <div class="tab-pane show active" id="vertical-left-tabs-preview">
+                                        <div class="row">
+                                            <div class="col-sm-3 mb-2 mb-sm-0">
+                                                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                                    <a class="nav-link active" id="v-pills-settings-tab" data-bs-toggle="pill" href="#consolidate" role="tab" aria-controls="consolidate" aria-selected="false">
+                                                        <i class="mdi mdi-settings-outline d-md-none d-block"></i>
+                                                        <span class="d-none d-md-block">RCC</span>
+                                                    </a>
+
+
+
+                                                    <a class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" href="#turn-bill" role="tab" aria-controls="turn-bill" aria-selected="false">
+                                                        <i class="mdi mdi-settings-outline d-md-none d-block"></i>
+                                                        <span class="d-none d-md-block">Facturación de turnos(Cliente)</span>
+                                                    </a>
+
+
+                                                </div>
+                                            </div>
+                                            <!-- end col-->
+
+                                            <div class="col-sm-9">
+                                                <div class="tab-content" id="v-pills-tabContent">
+                                                    <div class="tab-pane   fade" id="turn-bill" role="tabpanel" aria-labelledby="turn-bill-tab">
+                                                        <div class="d-flex w-auto">
+                                                            <label class="form-label">Mes a facturar</label>
+                                                            <input type="month" class="form-control date" id="birthdatepicker" data-toggle="date-picker" data-single-date-picker="true" style="height:38px">
+                                                            <a href="#" class="mx-2">
+                                                                <button class="btn btn-primary">Descargar</button>
+                                                            </a>
+                                                        </div>
+                                                        <div class="table-responsive">
+                                                            <table class="table table-striped table-centered mb-0">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Detalle</th>
+                                                                        <th>Cant.</th>
+                                                                        <th>Vr. Por turno ($)</th>
+                                                                        <th>Subtotal</th>
+                                                                        <th>
+                                                                            <div class="form-check">
+
+                                                                                <button class="btn btn-primary" for="flexCheckChecked">
+                                                                                    <i class="mdi mdi-check "></i>
+                                                                                    Confirmar
+                                                                                </button>
+                                                                            </div>
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>Turnos Pto Pimsa-Estibador - 8hrs Diruno - Nocturno</td>
+                                                                        <td>0</td>
+                                                                        <td>$ 126.000</td>
+                                                                        <td>0</td>
+                                                                        <td></td>
+
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Turnos Pto Pimsa-Estibador - 10hrs Diruno - Nocturno</td>
+                                                                        <td>32.5</td>
+                                                                        <td>$ 137.000</td>
+                                                                        <td>$ 4.452.500 </td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Turnos Pto Pimsa- Operario de Montacargas - Siso- Supervisor- <br>Tarjador- Digitalizador- 10 Hrs Diurno - Nocturno</td>
+                                                                        <td>10,5</td>
+                                                                        <td>$ 171.000</td>
+                                                                        <td>$ 1.795.500</td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Reembolso de Servicio de Comedor </td>
+                                                                        <td>39</td>
+                                                                        <td>$ 14.500</td>
+                                                                        <td>$ 565.500</td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><b>TOTALES JULIO DE 2021</b></td>
+                                                                        <td>43</td>
+                                                                        <td></td>
+                                                                        <td>$ 6.813.500</td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <div id="complex-header-datatable_paginate" class="dataTables_paginate paging_simple_numbers mt-1 text-end">
+                                                                <ul class="pagination pagination-rounded text-end">
+                                                                    <li id="complex-header-datatable_previous" class="paginate_button page-item previous disabled"><a href="#" aria-controls="complex-header-datatable" data-dt-idx="0" tabindex="0" class="page-link"><i class="mdi mdi-chevron-left"></i></a></li>
+                                                                    <li class="paginate_button page-item active"><a href="#" aria-controls="complex-header-datatable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                                                                    <li id="complex-header-datatable_next" class="paginate_button page-item next"><a href="#" aria-controls="complex-header-datatable" data-dt-idx="7" tabindex="0" class="page-link"><i class="mdi mdi-chevron-right"></i></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="tab-pane active show fade" id="consolidate" role="tabpanel" aria-labelledby="consolidate-tab">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-striped table-centered mb-0">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>ID</th>
+                                                                        <th>Nombre del empleado</th>
+                                                                        <th>Cargo del empleado</th>
+                                                                        <th>Estado</th>
+                                                                        <th>Confirmar</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr style="cursor: pointer;" tabindex="0">
+                                                                        <td class="table-user"><span>73,085,373</span></td>
+                                                                        <td><span>Andres Figueroa Estrada </span></td>
+                                                                        <td><span>Tarjador </span></td>
+                                                                        <td><span>Confirmado </span></td>
+
+                                                                        <td class="table-action">
+                                                                            <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil fw-bold text-primary"></i></a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr style="cursor: pointer;" tabindex="0">
+                                                                        <td class="table-user"><span>72,043,917</span></td>
+                                                                        <td><span>Apolinar Javier Barrios Jiménez</span></td>
+                                                                        <td><span>Estibador</span></td>
+                                                                        <td><span>Pendiente</span></td>
+                                                                        <td class="table-action">
+                                                                            <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil fw-bold text-primary"></i></a>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                </tbody>
+                                                            </table>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <!-- end tab-content-->
+                                            </div>
+                                            <!-- end col-->
+                                        </div>
+                                        <!-- end row-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="daily-status">
+
+                                <div class=" d-flex w-auto ">
+                                    <label class="form-label">Dia a realizar</label>
+                                    <input type="date" class="form-control date " id="birthdatepicker" data-toggle="date-picker" data-single-date-picker="true" style="height: 38px;">
+
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-centered mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>Numero</th>
+                                                <th>Fecha</th>
+                                                <th>Hora inicio</th>
+                                                <th>Descripción/Novedad</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>15/07/2021</td>
+                                                <td>11:35 am</td>
+                                                <td>Descargue de 5 toneladas</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                    <div id="complex-header-datatable_paginate" class="dataTables_paginate paging_simple_numbers mt-1 text-end">
+                                        <ul class="pagination pagination-rounded text-end">
+                                            <li id="complex-header-datatable_previous" class="paginate_button page-item previous disabled"><a href="#" aria-controls="complex-header-datatable" data-dt-idx="0" tabindex="0" class="page-link"><i class="mdi mdi-chevron-left"></i></a></li>
+                                            <li class="paginate_button page-item active"><a href="#" aria-controls="complex-header-datatable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                                            <li id="complex-header-datatable_next" class="paginate_button page-item next"><a href="#" aria-controls="complex-header-datatable" data-dt-idx="7" tabindex="0" class="page-link"><i class="mdi mdi-chevron-right"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="tab-pane" id="chargue">
+                                <div class="container-btn d-flex justify-content-between mb-2">
+                                    <button class="btn btn-primary" style="height: 38px;">Descargar</button>
+                                    <!--                                     <button class="btn btn-primary mx-2" style="height: 38px;" data-bs-target="#add-charge-modal" data-bs-toggle="modal">Agregar reporte</button>
+ --></div>
+                                <div class="app-search ">
+                                    <div class="mb-2 position-relative">
+                                        <input type="text" placeholder="Buscar cargas...." class="form-control">
+                                        <span class="mdi mdi-magnify search-icon"></span>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-centered mb-0">
+                                        <thead>
+                                            <tr>
+
+                                                <th>Motonave/Barcaza</th>
+                                                <th>Fecha y hora inicio</th>
+                                                <th>Fecha y hora fin</th>
+                                                <th>N° Bobinas</th>
+                                                <th>Cliente</th>
+                                                <th>Placa</th>
+                                                <th>Remesa</th>
+                                                <th>Código bobina</th>
+                                                <th>Espesor</th>
+                                                <th>Dimensiones</th>
+                                                <th>Peso bruto</th>
+                                                <th>Observaciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+
+                                                <td>KING 300</td>
+                                                <td>24/06/2021 07:12</td>
+                                                <td>24/08/2021 12:12</td>
+                                                <td>1</td>
+                                                <td>Cliente 4</td>
+                                                <td>FWE345</td>
+                                                <td>15000</td>
+                                                <td>HDF49342D</td>
+                                                <td>5mts</td>
+                                                <td>5 x 2.5 mts/u</td>
+                                                <td>300kg</td>
+                                                <td>Perfectas condiciones</td>
+                                            </tr>
+                                            <tr>
+
+
+                                                <td>MLB 234</td>
+                                                <td>24/07/2021 07:12</td>
+                                                <td>24/07/2021 12:12</td>
+                                                <td>1</td>
+                                                <td>Cliente 4</td>
+                                                <td>WHR100</td>
+                                                <td>15000</td>
+                                                <td>DHFHS49AS</td>
+                                                <td>6mts</td>
+                                                <td>3 x 4.5 mts/u</td>
+                                                <td>600kg</td>
+                                                <td>Perfectas condiciones</td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div id="complex-header-datatable_paginate" class="dataTables_paginate paging_simple_numbers mt-2 d-flex justify-content-between">
+
+                                    <ul class="pagination pagination-rounded text-end">
+                                        <li id="complex-header-datatable_previous" class="paginate_button page-item previous disabled"><a href="#" aria-controls="complex-header-datatable" data-dt-idx="0" tabindex="0" class="page-link"><i class="mdi mdi-chevron-left"></i></a></li>
+                                        <li class="paginate_button page-item active"><a href="#" aria-controls="complex-header-datatable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                                        <li id="complex-header-datatable_next" class="paginate_button page-item next"><a href="#" aria-controls="complex-header-datatable" data-dt-idx="7" tabindex="0" class="page-link"><i class="mdi mdi-chevron-right"></i></a></li>
+                                    </ul>
+
+                                </div>
+
+                            </div>
+                            <div class="tab-pane" id="descharge">
+                                <div class="container-btn d-flex justify-content-between mb-2">
+                                    <button class="btn btn-primary" style="height: 38px;">Descargar</button>
+                                    <!--                                     <button class="btn btn-primary mx-2" style="height: 38px;" data-bs-target="#add-descharge-modal" data-bs-toggle="modal">Agregar reporte</button>
+ --></div>
+                                <div class="app-search ">
+                                    <div class="mb-2 position-relative">
+                                        <input type="text" placeholder="Buscar descargas...." class="form-control">
+                                        <span class="mdi mdi-magnify search-icon"></span>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-centered mb-0">
+                                        <thead>
+                                            <tr>
+
+                                                <th>Motonave/Barcaza</th>
+                                                <th>Fecha y hora inicio</th>
+                                                <th>Fecha y hora fin</th>
+                                                <th>N° Bobinas</th>
+                                                <th>Cliente</th>
+
+                                                <th>Observaciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+
+                                                <td>KING 300</td>
+                                                <td>24/06/2021 07:12</td>
+                                                <td>24/08/2021 12:12</td>
+                                                <td>1</td>
+                                                <td>Cliente 4</td>
+
+                                                <td>Perfectas condiciones</td>
+                                            </tr>
+                                            <tr>
+
+                                                <td>MLB 234</td>
+                                                <td>24/07/2021 07:12</td>
+                                                <td>24/07/2021 12:12</td>
+                                                <td>1</td>
+                                                <td>Cliente 4</td>
+
+                                                <td>Perfectas condiciones</td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div id="complex-header-datatable_paginate" class="dataTables_paginate paging_simple_numbers mt-2 d-flex justify-content-between">
+
+                                    <ul class="pagination pagination-rounded text-end">
+                                        <li id="complex-header-datatable_previous" class="paginate_button page-item previous disabled"><a href="#" aria-controls="complex-header-datatable" data-dt-idx="0" tabindex="0" class="page-link"><i class="mdi mdi-chevron-left"></i></a></li>
+                                        <li class="paginate_button page-item active"><a href="#" aria-controls="complex-header-datatable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                                        <li id="complex-header-datatable_next" class="paginate_button page-item next"><a href="#" aria-controls="complex-header-datatable" data-dt-idx="7" tabindex="0" class="page-link"><i class="mdi mdi-chevron-right"></i></a></li>
+                                    </ul>
+
+                                </div>
+
+                            </div>
+                            <div class="tab-pane" id="office">
+                                <div class="btn-container d-flex justify-content-between mb-2">
+                                    <button class="btn btn-primary" style="height: 38px;">Descargar</button>
+                                    <!--                                     <button class="btn btn-primary mx-2" style="height: 38px;" data-bs-target="#add-office-modal" data-bs-toggle="modal">Nuevo despacho</button>
+ --></div>
+                                <div class="app-search ">
+                                    <div class="mb-2 position-relative">
+                                        <input type="text" placeholder="Buscar despachos" class="form-control">
+                                        <span class="mdi mdi-magnify search-icon"></span>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-centered mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>Vehiculo</th>
+                                                <th>Fecha y hora inicio</th>
+                                                <th>Fecha y hora fin</th>
+                                                <th>N° Bobinas</th>
+                                                <th>Cliente</th>
+                                                <th>Placa</th>
+                                                <th>Remesa</th>
+                                                <th>Código bobina</th>
+                                                <th>Espesor</th>
+                                                <th>Dimensiones</th>
+                                                <th>Peso bruto</th>
+                                                <th>Observaciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+
+                                                <td>KING 300</td>
+                                                <td>24/06/2021 07:12</td>
+                                                <td>24/08/2021 12:12</td>
+                                                <td>5</td>
+                                                <td>Remesa</td>
+                                                <td>FWE345</td>
+                                                <td>15000</td>
+                                                <td>HDF49342D</td>
+                                                <td>5mts</td>
+                                                <td>5 x 2.5 mts/u</td>
+                                                <td>300kg</td>
+                                                <td>Perfectas condiciones</td>
+                                            </tr>
+                                            <tr>
+
+                                                <td>MLB 234</td>
+                                                <td>24/07/2021 07:12</td>
+                                                <td>24/07/2021 12:12</td>
+                                                <td>7</td>
+                                                <td>Remesa</td>
+                                                <td>WHR100</td>
+                                                <td>15000</td>
+                                                <td>DHFHS49AS</td>
+                                                <td>6mts</td>
+                                                <td>3 x 4.5 mts/u</td>
+                                                <td>600kg</td>
+                                                <td>Perfectas condiciones</td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div id="complex-header-datatable_paginate" class="dataTables_paginate paging_simple_numbers mt-2 d-flex justify-content-between">
+
+                                    <ul class="pagination pagination-rounded text-end">
+                                        <li id="complex-header-datatable_previous" class="paginate_button page-item previous disabled"><a href="#" aria-controls="complex-header-datatable" data-dt-idx="0" tabindex="0" class="page-link"><i class="mdi mdi-chevron-left"></i></a></li>
+                                        <li class="paginate_button page-item active"><a href="#" aria-controls="complex-header-datatable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                                        <li id="complex-header-datatable_next" class="paginate_button page-item next"><a href="#" aria-controls="complex-header-datatable" data-dt-idx="7" tabindex="0" class="page-link"><i class="mdi mdi-chevron-right"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="evidencias">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="header-title">Material gráfico de la operacion</h4>
+                                        <p class="text-muted font-14">Visualizala</p>
+                                        <div class="row my-2">
+                                            <div class="col-sm-10">
+                                                <input type="date" class="form-control">
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <button class="btn btn-primary" (click)="Show()">Filtrar</button>
+                                            </div>
+                                        </div>
+                                        <!-- end nav-->
+
+                                        <div id="carouselExampleCaption" *ngIf="show" class="carousel slide d-flex justify-content-center mt-2 " data-bs-ride="carousel">
+                                            <div class="carousel-inner w-75 text-center" role="listbox">
+                                                <div class="carousel-item">
+                                                    <img src="assets/images/small/small-1.jpg" alt="..." class="d-block w-100">
+
+                                                </div>
+                                                <div class="carousel-item active">
+                                                    <img src="assets/images/small/small-3.jpg" alt="..." class="d-block w-100 ">
+
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="assets/images/small/small-2.jpg" alt="..." class="d-block w-100 ">
+
+                                                </div>
+                                            </div>
+                                            <a class="carousel-control-prev" href="#carouselExampleCaption" role="button" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#carouselExampleCaption" role="button" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </a>
+
+                                            <!-- end preview-->
+
+
+                                            <!-- end preview code-->
+                                        </div>
+                                        <!-- end tab-content-->
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- end preview-->
+        <!-- end preview code-->
+    </div>
+    <!-- end tab-content-->
+</div>
+<!-- end card-body -->

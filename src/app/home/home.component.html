@@ -1,0 +1,40 @@
+<app-topbar></app-topbar>
+<div class="wrapper">
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <div class="wrapper menuitem-active">
+            <!--  Topbar Sart -->
+            <!--  Topbar End -->
+
+            <!-- Start Scroller-nav -->
+            <app-sidebar></app-sidebar>
+            <!-- End Scroller-nav -->
+
+            <!-- Start Content-->
+            <div class="content-page">
+                <div class="content">
+                    <app-bread-crumbs></app-bread-crumbs>
+
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+        <!-- container -->
+
+
+        <!-- content -->
+
+        <!-- Footer Start -->
+        <app-footer></app-footer>
+        <!-- end Footer -->
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+
+</div>
