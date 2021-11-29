@@ -15,18 +15,18 @@
                 <p class="text-muted mb-4">Ingresa tu email y contraseña para acceder a la plataforma</p>
 
                 <!-- form -->
-                <form action="">
+                <form id="loginform" (ngSubmit)="login()" autocomplete="off" [formGroup]="loginform">
                     <div class="mb-3">
                         <label for="emailaddress" class="form-label">Email</label>
-                        <input class="form-control" type="email" id="emailaddress" required="" placeholder="Ingresa tu email">
+                        <input class="form-control" formControlName="email" type="email" id="emailaddress" required placeholder="Ingresa tu correo electrónico">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Contraseña</label>
-                        <input class="form-control" type="password" required="" id="password" placeholder="Ingresa tu contraseña">
+                        <input class="form-control" formControlName="password" type="password" id="password" required placeholder="Ingresa tu contraseña">
                     </div>
 
                     <div class="d-grid mb-0 text-center">
-                        <button class="btn btn-primary" type="submit" [routerLink]="['/Dashboard']" routerLinkActive="router-link-active"><i class="mdi mdi-login"></i>Iniciar sesión</button>
+                        <button class="btn btn-primary" type="submit" routerLinkActive="router-link-active"><i class="mdi mdi-login"></i>Iniciar sesión</button>
                     </div>
 
                 </form>

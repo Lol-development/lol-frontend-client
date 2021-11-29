@@ -2,18 +2,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ValidateEmailComponent } from './validate-email/validate-email.component';
 
 
 const routes: Routes = [
     { path: '', component: LoginComponent },
     { path: 'Register', component: RegisterComponent },
-  
-
-    //{ path: 'path/:routeParam', component: MyComponent },
-    //{ path: 'staticPath', component: ... },
-    //{ path: '**', component: ... },
-    //{ path: 'oldPath', redirectTo: '/staticPath' },
-    //{ path: ..., component: ..., data: { message: 'Custom' }
+    {path: 'Validate-email', component: ValidateEmailComponent}
 ];
 
 @NgModule({

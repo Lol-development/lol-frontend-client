@@ -3,21 +3,29 @@ import { CommonModule } from '@angular/common';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ValidateEmailComponent } from './validate-email/validate-email.component';
 
 
 
 @NgModule({
   declarations: [
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    ValidateEmailComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule,
+    FormsModule
   ], 
   exports:[
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    ReactiveFormsModule,
+    FormsModule,
+    RouterModule
   ]
 })
 export class AuthModule { }

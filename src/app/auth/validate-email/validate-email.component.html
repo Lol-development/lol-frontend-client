@@ -1,0 +1,60 @@
+<div class="auth-fluid">
+    <!--Auth fluid left content -->
+    <div class="auth-fluid-form-box">
+        <div class="align-items-center d-flex h-100">
+            <div class="card-body">
+
+                <!-- Logo -->
+                <div class="auth-brand text-center text-lg-start mb-3">
+                    <a href="index.html" class=" ">
+                        <span><img src="assets/images/image001 (1).png" alt=" " ></span>
+                    </a>
+
+                </div>
+
+
+                <!-- title-->
+                <h4 class=" ">Válida tu cuenta LOL</h4>
+                <p class="text-muted mb-3 ">Completa los campos con el código que llegó al email que registraste:</p>
+
+                <!-- form -->
+                <form id="verifyNumberForm" (ngSubmit)="validateEmail()" autocomplete="off" [formGroup]="verifyEmailForm">
+
+                    <div class="mb-3">
+                        <label for="number" class="form-label">Código de verificación</label>
+                        <input class="form-control" formControlName="code" type="text" id="number" required placeholder="Ingresa tu código">
+                    </div>
+
+                    <div class="d-grid mb-0 text-center">
+                        <button class="btn btn-success" [disabled]="verifyEmailForm.invalid" type="submit"><i class="mdi mdi-login"></i> Válidar </button>
+                    </div>
+                    <!-- social-->
+
+                </form>
+
+                <!-- end form-->
+
+                <!-- Footer-->
+                <footer class="footer footer-alt ">
+                    <p class=" text-muted mt-5 mb-0 already-account">Dream Team LOL</p>
+                </footer>
+
+            </div>
+            <!-- end .card-body -->
+        </div>
+        <!-- end .align-items-center.d-flex.h-100-->
+    </div>
+    <!-- end auth-fluid-form-box-->
+
+    <!-- Auth fluid right content -->
+    <div class="auth-fluid-right text-center ">
+        <!-- <div class="auth-user-testimonial ">
+            <h2 class="mb-3 ">APOYAMOS LA LABOR DE NUESTROS CAMPESINOS</h2>
+            <p class="lead "> precios justos para todos
+            </p>
+
+        </div> -->
+        <!-- end auth-user-testimonial-->
+    </div>
+    <!-- end Auth fluid right content -->
+</div>
