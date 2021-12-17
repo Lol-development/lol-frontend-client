@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  base_url: 'https://lol-backend-dev.herokuapp.com/api/v1'
+  base_url: 'http://3.133.120.43:5002/api/v1'
 
 };

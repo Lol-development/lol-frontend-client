@@ -7,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class TopbarComponent implements OnInit {
-
+  public username : string = '';
   constructor() { }
 
   ngOnInit(): void {
+    this.username = localStorage.getItem('fullname') ||'Nombre del cliente';
   }
 
 }

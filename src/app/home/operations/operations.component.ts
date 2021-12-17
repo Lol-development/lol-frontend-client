@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OperationsService } from 'src/app/services/operations.service';
 
 @Component({
   selector: 'app-operations',
@@ -7,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class OperationsComponent implements OnInit {
-  public ID: number = 5
-  constructor() { }
+  public ID: string = '';
+  public operations:any [] = [];
+
+  constructor(private operationsSvc: OperationsService,) { }
 
   ngOnInit(): void {
+    this.ID = localStorage.getItem('id') || '';
+    this.getOperationsClient();
   }
-
+  getOperationsClient(){
+    this.operationsSvc.getClientOperations(this.ID)
+            .subscribe((resp:any) => {
+              this.operations = resp.data
+            })
+  }
 }

@@ -25,13 +25,13 @@ export class LoginComponent implements OnInit {
     this.authsvc.login(this.loginform.value)
     .subscribe((resp:any) => {
       localStorage.setItem('token', resp.data.jwt)
-      localStorage.setItem('fullname', resp.data.user.fullname);
+      localStorage.setItem('fullname', resp.data.user.client_name);
       localStorage.setItem('email', resp.data.user.email);
       localStorage.setItem('id', resp.data.user.id);
       localStorage.setItem('phone_number', resp.data.user.phone_number);
       localStorage.setItem('phone_prefix', resp.data.user.phone_prefix);
       localStorage.setItem('admin', resp.data.user.admin);
-  
+      console.log(resp)
     this.router.navigateByUrl('/Dashboard')
    
     }, (err => {
@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit {
         text: 'Revisa los campos!',
         showCancelButton: false
       })
+      console.log(err)
     }))
   }
 

@@ -5,8 +5,10 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class GlobalService {
-  get headers() {
+export class ReportService {
+
+  public base_url: string = environment.base_url;
+  get header() {
     return {
       headers: {
         'x-access-token': `${localStorage.getItem('token')}`
@@ -14,15 +16,11 @@ export class GlobalService {
     }
   } 
 
-  public base_url:string = environment.base_url;
-  constructor(private http: HttpClient) { }
+  constructor(private http:HttpClient){}
 
-  getPrefixNumber(){
-    const url = `${this.base_url}/prefix`;
-    return this.http.get(url, this.headers);
+
+  getReport(id:string){
+    const url = `${this.base_url}/reports/getforoperationid/${id}`;
+    return this.http.get(url, this.header);
   }
-
-
-  
-
 }

@@ -27,92 +27,91 @@
                 <!-- end nav-->
                 <div class="tab-content">
                     <div class="tab-pane show active" id="create-quote">
-                        <form action="">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="mb-3">
-                                        <label for="example-select" class="form-label fw-bold">Puerto</label>
-                                        <select class="form-select" id="example-select">
-                                                <option>Selecciona un puerto o ubicación de tu operación</option>
-                                                <option>Pimsa</option>
-                                                <option>Cartagena</option>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label fw-bold">Puerto</label>
+                                    <select class="form-select" id="example-select" [(ngModel)]="port_id">
+                                                <option disabled selected>Selecciona un puerto o ubicación de tu operación</option>
+                                                <option *ngFor="let port of Ports" [value]="port.id">{{port.name}}</option>
                                         </select>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="example-select" class="form-label fw-bold">Tipo de producto</label>
-                                        <select class="form-select" id="example-select">
-                                                <option>Selecciona el tipo de producto</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                        </select>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="example-select" class="form-label fw-bold">Cantidad de servicios</label>
-                                        <input type="number" min="0" placeholder="Cantidad de servicios" class="form-control">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="example-select" class="form-label fw-bold">Numero de toneladas</label>
-                                        <input type="number" min="0" placeholder="Numero de toneladas" class="form-control">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="example-select" class="form-label fw-bold">Fecha estimada de operación</label>
-                                        <input type="date" min="0" placeholder="Fecha estimada de operación" class="form-control">
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="example-select" class="form-label my-0 fw-bold">Rata de productividad</label>
-                                        <input type="number" name="" class="form-control" min="0" placeholder="Rata de productividad" id="">
-                                    </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="mb-3">
-                                        <label for="example-select" class="form-label fw-bold">Cantidad de cucharas</label>
-                                        <input type="number" min="0" placeholder="Cantidad de cucharas" class="form-control">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="example-select" class="form-label fw-bold">Cantidad de Tolvas</label>
-                                        <input type="number" min="0" placeholder="Cantidad de cucharas" class="form-control">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="example-select" class="form-label fw-bold">Cantidad de Minitolvas</label>
-                                        <input type="number" min="0" placeholder="Cantidad de cucharas" class="form-control">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="example-date" class="form-label fw-bold">Movimientos a realizar con los equipos seleccionados</label>
-
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="customCheck1">
-                                            <label class="form-check-label" for="customCheck1">Descargue</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="customCheck2">
-                                            <label class="form-check-label" for="customCheck2">Cargue</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="customCheck2">
-                                            <label class="form-check-label" for="customCheck2">Ensacado</label>
-                                        </div>
-
-                                    </div>
-
-
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label fw-bold">Tipo de producto</label>
+                                    <input type="text" min="0" placeholder="Producto a operar" [(ngModel)]="production_type" class="form-control">
 
                                 </div>
-                                <!-- end col -->
-                                <div class="col-sm-12">
-                                    <button class="btn btn-primary" type="button" (click)="quote()">
-                                        Cotizar
-                                    </button>
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label fw-bold">Cantidad de servicios</label>
+                                    <input type="number" min="0" [(ngModel)]="services" placeholder="Cantidad de servicios" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label fw-bold">Numero de toneladas</label>
+                                    <input type="number" min="0" [(ngModel)]="tons" placeholder="Numero de toneladas" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label fw-bold">Fecha estimada de operación</label>
+                                    <input type="date" min="0" [(ngModel)]="date_operation" placeholder="Fecha estimada de operación" class="form-control">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label my-0 fw-bold">Rata de productividad (Elementos/Hora)</label>
+                                    <input type="number" [(ngModel)]="productivity_rate" name="" class="form-control" min="0" placeholder="Rata de productividad" id="">
                                 </div>
                             </div>
-                        </form>
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label fw-bold">Cantidad de cucharas</label>
+                                    <input type="number" min="0" [(ngModel)]="spoons" placeholder="Cantidad de cucharas" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label fw-bold">Cantidad de Tolvas</label>
+                                    <input type="number" min="0" [(ngModel)]="hoopers" placeholder="Cantidad de cucharas" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="example-select" class="form-label fw-bold">Cantidad de Minitolvas</label>
+                                    <input type="number" min="0" [(ngModel)]="mini_hoppers" placeholder="Cantidad de cucharas" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="example-date" class="form-label fw-bold">Movimientos a realizar con los equipos seleccionados</label>
+
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" [(ngModel)]="discharge" id="customCheck1">
+                                        <label class="form-check-label" for="customCheck1">Descargue</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" [(ngModel)]="load" id="customCheck2">
+                                        <label class="form-check-label" for="customCheck2">Cargue</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" [(ngModel)]="bagged" id="customCheck2">
+                                        <label class="form-check-label" for="customCheck2">Ensacado</label>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                            <!-- end col -->
+                            <div class="col-sm-12">
+                                <button class="btn btn-primary" type="button" (click)="quote()">
+                                        Cotizar
+                                    </button>
+                            </div>
+                        </div>
 
 
                         <!-- end row-->
                     </div>
                     <!-- end preview-->
                     <div class="tab-pane" id="pendings-quote">
-                        <table class="table table-striped table-centered mb-0">
+                        <div class="alert alert-success" role="alert" *ngIf="pendingQuotes.length === 0">
+                            <h4 class="alert-heading">No tienes cotizaciones pendientes</h4>
+                            <p></p>
+                            <p class="mb-0">Revisas las respondidas o genera una nueva solicitud</p>
+                        </div>
+                        <table class="table table-striped table-centered mb-0" *ngIf="pendingQuotes.length > 0">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -121,36 +120,27 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr *ngFor="let pendingQuote of pendingQuotes">
                                     <td class="table-user">
-                                        HSDÑLF2332S
+                                        {{pendingQuote.id}}
                                     </td>
-                                    <td>Pimsa</td>
-                                    <td>24/07/2021</td>
-
-                                </tr>
-                                <tr>
-                                    <td class="table-user">
-                                        HSDÑLF2332S
+                                    <td>{{pendingQuote.port.name}}</td>
+                                    <td>{{pendingQuote.createdAt | date:'short'}} </td>
+                                    <td class="table-action">
+                                        <a (click)="deleteQuote(pendingQuote.id)" class="action-icon"> <i class="mdi mdi-delete text-danger"></i></a>
                                     </td>
-                                    <td>Pimsa</td>
-                                    <td>24/07/2021</td>
-
-                                </tr>
-                                <tr>
-                                    <td class="table-user">
-                                        ASFJKD23ED3
-                                    </td>
-                                    <td>Cartagena</td>
-                                    <td>11/03/2021</td>
-
                                 </tr>
 
                             </tbody>
                         </table>
                     </div>
                     <div class="tab-pane" id="responses-quote">
-                        <table class="table table-striped table-centered mb-0">
+                        <div class="alert alert-success" role="alert" *ngIf="aprovedQuotes.length === 0">
+                            <h4 class="alert-heading">No tienes cotizaciones respondidas</h4>
+                            <p></p>
+                            <p class="mb-0">Revisas las respondidas o genera una nueva solicitud</p>
+                        </div>
+                        <table class="table table-striped table-centered mb-0" *ngIf="aprovedQuotes.length > 0">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -160,36 +150,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr *ngFor="let aq of aprovedQuotes">
                                     <td class="table-user">
-                                        HSDÑLF2332S
+                                        {{aq.id}}
                                     </td>
-                                    <td>Pimsa</td>
-                                    <td>24/07/2021</td>
+                                    <td>{{aq.port.name}}</td>
+                                    <td>{{aq.createdAt | date:'short'}} </td>
                                     <td class="table-action">
-                                        <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-download"></i></a>
+                                        <a (click)="deleteQuote(aq.id)" class="action-icon"> <i class="mdi mdi-delete text-danger"></i></a>
+
+                                        <a [href]="aq.document_url" class="action-icon"> <i class="mdi mdi-download text-primary"></i></a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td class="table-user">
-                                        HSDÑLF2332S
-                                    </td>
-                                    <td>Pimsa</td>
-                                    <td>24/07/2021</td>
-                                    <td class="table-action">
-                                        <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-download"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="table-user">
-                                        ASFJKD23ED3
-                                    </td>
-                                    <td>Cartagena</td>
-                                    <td>11/03/2021</td>
-                                    <td class="table-action">
-                                        <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-download"></i></a>
-                                    </td>
-                                </tr>
+
 
                             </tbody>
                         </table>

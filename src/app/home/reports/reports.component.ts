@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import { Color, BaseChartDirective, Label } from 'ng2-charts';
+import { OperationsService } from 'src/app/services/operations.service';
+import { ReportService } from 'src/app/services/report.service';
 
 
 @Component({
@@ -103,11 +105,42 @@ export class ReportsComponent implements OnInit {
   ];
   public lineChartLegend = true;
   public lineChartType: ChartType = 'line';
-  public ID: number = 5;
-  constructor() { }
+  public ID: string = '';
+  public OID: string = '';
+  public expected_rat: string = '';
+  public expected_time: string = '';
+  public obtained_rat: string = '';
+  public real_time: string = '';
+  public operations:any[] = [];
+  public reports:any[] = [];
+  public show:boolean = false;
+
+  constructor(private reportSvc:ReportService, private operationSvc:OperationsService) { }
 
   ngOnInit(): void {
+    this.ID = localStorage.getItem('id') || '';
+    this.getOperations();
   }
   // events
 
+  getOperations(){
+    this.operationSvc.getClientOperations(this.ID)
+            .subscribe((resp:any) => {
+              this.operations = resp.data;
+            })
+
+  }
+
+  getOperationReport(){
+      this.show === false
+    this.reportSvc.getReport(this.OID)
+            .subscribe((resp:any) => {
+              this.show = !this.show;
+              this.obtained_rat = resp.data.obtained_rat;
+              this.expected_rat = resp.data.expected_rat;
+              this.real_time = resp.data.real_time;
+              this.expected_time = resp.data.expected_time;
+              this.reports = resp.data;
+            })
+  }
 }

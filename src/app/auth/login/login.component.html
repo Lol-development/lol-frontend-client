@@ -12,7 +12,8 @@
                 </div>
                 <!-- title-->
                 <h4 class="mt-0">Iniciar sesión</h4>
-                <p class="text-muted mb-4">Ingresa tu email y contraseña para acceder a la plataforma</p>
+                <p class="text-muted">Ingresa tu email y contraseña para acceder a la plataforma</p>
+                <p class="text-muted mb-3">¿No tienes una cuenta? <a [routerLink]="['/Register']" routerLinkActive="router-link-active" class="text-muted ms-1"><b>Registrate</b></a></p>
 
                 <!-- form -->
                 <form id="loginform" (ngSubmit)="login()" autocomplete="off" [formGroup]="loginform">
@@ -34,13 +35,13 @@
 
                 <!-- Footer-->
 
-                <footer class="footer footer-alt">
+                <!--        <footer class="footer footer-alt">
                     <a class="">
                         <span><img src="assets/images/image002.png" width="120px" height="50px" alt="" ></span>
                     </a>
                     <p class="text-muted my-2 py-2">Lol logísticas</p>
                     <p class="text-muted">¿No tienes una cuenta? <a [routerLink]="['/Register']" routerLinkActive="router-link-active" class="text-muted ms-1"><b>Registrate</b></a></p>
-                </footer>
+                </footer> -->
 
             </div>
             <!-- end .card-body -->

@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { OperationsDetailsComponent } from './operations-details/operations-details.component';
 import { ReportsComponent } from './reports/reports.component';
 import { ChartsModule } from 'ng2-charts';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -24,7 +25,8 @@ import { ChartsModule } from 'ng2-charts';
     CommonModule,
     SharedModule,
     RouterModule,
-    ChartsModule
+    ChartsModule,
+    FormsModule
   ]
 })
 export class HomeModule { }

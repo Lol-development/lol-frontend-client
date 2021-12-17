@@ -7,20 +7,28 @@
         </p>
 
         <div class="app-search ">
-            <form>
-                <div class="mb-4 position-relative d-flex">
-                    <select class="form-select mx-2  w-50" id="example-select">
-                            <option>Operación ZYX</option>
-                            <option>Operación III</option>
-                            <option>Operación VI</option>
+            <div class="mb-4 position-relative d-flex">
+                <select class="form-select mx-2  w-50" id="example-select" [(ngModel)]="OID">
+                            <option *ngFor="let clientOp of operations" [value]="clientOp.id">{{clientOp.name}} </option>
+                         
                     </select>
-                    <input type="month" class="form-control w-50 mx-2" name="" id="">
-                    <button class="btn btn-primary" type="submit">Seleccionar</button>
-                </div>
-            </form>
+
+                <button class="btn btn-primary" type="button" (click)="getOperationReport()">Seleccionar</button>
+            </div>
         </div>
 
-        <div class="graphic-reports mb-3">
+        <div class="alert alert-success" role="alert" *ngIf="!show">
+            <h4 class="alert-heading">Selecciona tu operación para poder encontrar el reporte</h4>
+            <p></p>
+            <p class="mb-0"></p>
+        </div>
+        <div class="alert alert-warning" role="alert" *ngIf="reports.length === 0 && show">
+            <h4 class="alert-heading">No encontramos un reporte </h4>
+            <p></p>
+            <p class="mb-0">Pronto generaremos uno</p>
+        </div>
+
+        <div class="graphic-reports mb-3" *ngIf="show === true">
             <div class="row mb-3">
                 <div class="col-12">
                     <div class="card widget-inline">
@@ -30,7 +38,7 @@
                                     <div class="card shadow-none m-0">
                                         <div class="card-body text-center">
                                             <i class="dripicons-briefcase text-muted" style="font-size: 24px;"></i>
-                                            <h5><span>16</span> Rollos/Hora</h5>
+                                            <h5><span>{{expected_rat}}</span> Rollos/Hora</h5>
                                             <h3 class="text-muted font-15 mb-0">Rata Esperada</h3>
                                         </div>
                                     </div>
@@ -40,7 +48,7 @@
                                     <div class="card shadow-none m-0 border-start">
                                         <div class="card-body text-center">
                                             <i class="dripicons-checklist text-muted" style="font-size: 24px;"></i>
-                                            <h5><span>8</span> Rollos/Hora</h5>
+                                            <h5><span>{{obtained_rat}}</span> Rollos/Hora</h5>
                                             <h3 class="text-muted font-15 mb-0">Rata real</h3>
                                         </div>
                                     </div>
@@ -50,7 +58,7 @@
                                     <div class="card shadow-none m-0 border-start">
                                         <div class="card-body text-center">
                                             <i class="dripicons-user-group text-muted" style="font-size: 24px;"></i>
-                                            <h5><span>31</span> Horas</h5>
+                                            <h5><span>{{expected_time}}</span> Horas</h5>
                                             <h3 class="text-muted font-15 mb-0">Tiempo Esperado</h3>
                                         </div>
                                     </div>
@@ -60,7 +68,7 @@
                                     <div class="card shadow-none m-0 border-start">
                                         <div class="card-body text-center">
                                             <i class="dripicons-graph-line text-muted" style="font-size: 24px;"></i>
-                                            <h5><span>132.05</span> Horas<i class="mdi mdi-arrow-up text-success"></i></h5>
+                                            <h5><span>{{real_time}} </span> Horas<i class="mdi mdi-arrow-up text-success"></i></h5>
                                             <h3 class="text-muted font-15 mb-0">Tiempo Real</h3>
                                         </div>
                                     </div>
@@ -74,7 +82,7 @@
                 </div>
                 <!-- end col-->
             </div>
-            <div class="row">
+            <!--         <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <div>
                         <div style="display: block">
@@ -107,7 +115,7 @@
 
                 </div>
 
-            </div>
+            </div> -->
         </div>
 
     </div>
