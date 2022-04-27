@@ -47,31 +47,36 @@ export class RegisterComponent implements OnInit {
     } else { 
       this.authsvc.register(this.registerform.value)
             .subscribe( (resp:any) => {  
+              console.log(resp)
               if (resp.error === true) {
-                Swal.fire( `${resp.message}`, 'Vuelve a intentarlo', 'error')
-              } else if(resp.error === false ){
-                  localStorage.setItem('email', this.registerform.controls['email'].value)
+                 Swal.fire( `${resp.message}`, 'Vuelve a intentarlo', 'error'),
+                 console.log(resp)
+              } else if(resp.error == false ){
+                 localStorage.setItem('email', this.registerform.controls['email'].value )
                   const  sendEmailCode = { 
-                      email: localStorage.getItem('email')
-                  }
+                    email: this.registerform.controls['email'].value
+                   }
                   this.authsvc.sendConfirmEmail(sendEmailCode)
-                        .subscribe((resp:any) => {
-                          if (resp.error === false) {
-                            localStorage.setItem('code_id', resp.data.code_id);
-                            this.router.navigateByUrl('/Validate-email')
-                          } else {
-                            Swal.fire( `${resp.message}`, 'Vuelve a intentarlo', 'error');
-                            
-                          }
-                        })
-                }
-              }
-              , (err => {
+                      .subscribe((resp:any) => {
+                        console.log(resp)
+                        if (resp.error === false) {
+                          localStorage.setItem('code_id', resp.data.code_id);
+                          this.router.navigateByUrl('/Validate-email')
+                        } else {
+                          Swal.fire( `${resp.message}`, 'Vuelve a intentarlo', 'error');
+                          
+                        }
+                      })
+              } 
+              }, (err => {
               Swal.fire('Ooops', 'Código incorrecto', 'error')
               console.log(err)
             }))
      }
   };
+
+ 
+
   getPrefixNumbers(){
     this.globalSvc.getPrefixNumber()
     .subscribe(resp => {
